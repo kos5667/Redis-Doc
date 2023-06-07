@@ -1,5 +1,5 @@
 # Redis Study Document
 
-- [Sorted]: ./docs/SortedSet.md
+- [Sorted](./SortedSet.md)
 
   
