@@ -1,4 +1,4 @@
-# Redis Sorted Sets([소개](https://redis.io/docs/data-types/sorted-sets/))
+# [Redis Sorted Sets](https://redis.io/docs/data-types/sorted-sets/)
 
 Sorted Sets는 key 하나에 여러개의 score와 value로 구성됩니다. Value는 score로 sort되며 중복되지 않습니다.
 score가 같으면 value로 sort됩니다. Sorted Sets에서는 집합이라는 의미에서 value를 member라 부릅니다.
@@ -115,3 +115,4 @@ Sorted Sets은 주로 sort가 필요한 곳에 사용됩니다.
 
 - https://redis.io/docs/data-types/sorted-sets/
 - http://redisgate.kr/redis/command/zsets.php
+- https://luran.me/381
