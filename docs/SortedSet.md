@@ -27,14 +27,14 @@ Sorted Sets은 주로 sort가 필요한 곳에 사용됩니다.
 
 ## milestone
 
-<detail>
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
 
-​	<summary>ZADD</summary>
+😎숨겨진 내용😎
 
-
-<div markdown="1">ZADD</div>
-
-</datail>
+</div>
+</details>
 
 
 
