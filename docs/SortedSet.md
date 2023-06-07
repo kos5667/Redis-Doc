@@ -11,7 +11,7 @@ Sorted Sets은 주로 sort가 필요한 곳에 사용됩니다.
 - [`ZADD`](https://redis.io/commands/zadd)새 멤버 및 관련 점수를 정렬된 세트에 추가합니다. 구성원이 이미 존재하는 경우 점수가 업데이트됩니다.
 - [`ZRANGE`](https://redis.io/commands/zrange)주어진 범위 내에서 정렬된 정렬된 집합의 구성원을 반환합니다.
 - [`ZRANK`](https://redis.io/commands/zrank)정렬된 항목이 오름차순이라고 가정하고 제공된 멤버의 순위를 반환합니다.
-- [ZREVRANK](https://redis.io/commands/zrevrank)정렬된 집합이 내림차순이라고 가정하고 제공된 멤버의 순위를 반환합니다.
+- [`ZREVRANK`](https://redis.io/commands/zrevrank)정렬된 집합이 내림차순이라고 가정하고 제공된 멤버의 순위를 반환합니다.
 
 ### 명령어 요약
 
@@ -23,18 +23,47 @@ Sorted Sets은 주로 sort가 필요한 곳에 사용됩니다.
 - **집합연산**: ZUNIONSTORE, ZINTERSTORE
 - **Enterprise**: ZISMEMBER, ZLS, ZRM, SLEN, SADDS (subquery)
 
-
-
 ## milestone
 
-<details>
-<summary>여기를 눌러주세요</summary>
-<div markdown="1">       
+### Examples
 
-😎숨겨진 내용😎
+#### ZADD
 
-</div>
-</details>
+- 플레이어의 점수가 변경되면 실시간 순위표 업데이트:
+
+```bash
+> ZADD leaderboard:455 100 user:1
+(integer) 1
+> ZADD leaderboard:455 75 user:2
+(integer) 1
+> ZADD leaderboard:455 101 user:3
+(integer) 1
+> ZADD leaderboard:455 15 user:4
+(integer) 1
+> ZADD leaderboard:455 275 user:2
+(integer) 0
+```
+
+ `user:2`점수는 최종 [`ZADD`](https://redis.io/commands/zadd)호출에서 업데이트됩니다.
+
+- 상위 3명의 플레이어 점수 얻기
+
+```bash
+> ZRANGE leaderboard:455 0 2 REV WITHSCORES
+1) "user:2"
+2) "275"
+3) "user:3"
+4) "101"
+5) "user:1"
+6) "100"
+```
+
+- 사용자 2의 등급은 무엇입니까?
+
+```bash
+> ZREVRANK leaderboard:455 user:2
+(integer) 0
+```
 
 
 
