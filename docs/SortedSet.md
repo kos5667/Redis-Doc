@@ -23,7 +23,22 @@ Sorted Sets은 주로 sort가 필요한 곳에 사용됩니다.
 - **집합연산**: ZUNIONSTORE, ZINTERSTORE
 - **Enterprise**: ZISMEMBER, ZLS, ZRM, SLEN, SADDS (subquery)
 
-## outline
+
+
+## milestone
+
+<detail>
+
+​	<summary>ZADD</summary>
+
+
+<div markdown="1">ZADD</div>
+
+</datail>
+
+
+
+## mindmap
 
 ### [Sorted Sets 명령어 리스트](https://redis.io/commands/?group=sorted-set)
 
@@ -67,5 +82,7 @@ Sorted Sets은 주로 sort가 필요한 곳에 사용됩니다.
 | [ZLEN](http://redisgate.kr/redis/command/zlen.php)           | Ent 7.0.0 | key                                                          | 키에 속한 멤버 개수를 리턴                   |
 | [ZADDS](http://redisgate.kr/redis/command/zadd_subquery.php) | Ent 7.2.5 | key (subquery)                                               | 서브쿼리로 데이터 추가                       |
 
-## outline
+## Reference
 
+- https://redis.io/docs/data-types/sorted-sets/
+- http://redisgate.kr/redis/command/zsets.php
